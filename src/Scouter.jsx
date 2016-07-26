@@ -4,10 +4,23 @@ class ScouterCard extends React.Component {
   render() {
     console.log(this.props);
     const { name, atk, int, agi } = this.props.data;
-    return (<div>
-      <p>NAME: {name}</p>
-      <p>ATTACK:{atk}, INTELLIGENCE:{int} AGILITY:{agi}</p>
-    </div>);
+    return (
+      <div className="ui card">
+        <div className="content">
+          <a className="header" href={`https://github.com/${name}`}>{name}</a>
+          <div className="meta">@{name}</div>
+          <div className="description">
+            ATTACK:{atk}, INTELLIGENCE:{int} AGILITY:{agi}
+          </div>
+        </div>
+        <div className="extra content">
+          <span className="left floated like">
+            <i className="like icon"></i>
+            Like
+          </span>
+        </div>
+      </div>
+    );
   }
 }
 ScouterCard.propTypes = { data: React.PropTypes.object };
