@@ -1,10 +1,9 @@
 import React from 'react';
 
-class ScouterCard extends React.Component {
-  render() {
-    console.log(this.props);
-    const { name, atk, int, agi } = this.props.data;
-    return (
+const ScouterCard = (props) => {
+  const { name, atk, int, agi } = props.data;
+  return (
+    <div className="column">
       <div className="ui card">
         <div className="content">
           <a className="header" href={`https://github.com/${name}`}>{name}</a>
@@ -20,9 +19,9 @@ class ScouterCard extends React.Component {
           </span>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 ScouterCard.propTypes = { data: React.PropTypes.object };
 
 export default class Scouter extends React.Component {
@@ -46,7 +45,7 @@ export default class Scouter extends React.Component {
   }
   render() {
     const cards = this.state.scouterData.map(e => <ScouterCard data={e} key={e.name} />);
-    return (<div>
+    return (<div className="ui three column grid">
       {cards}
     </div>);
   }
