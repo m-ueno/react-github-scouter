@@ -1,9 +1,11 @@
 import React from 'react';
+import Scouter from './Scouter.jsx';
 
 export default class App extends React.Component {
   render() {
     return (<div>
-      <p>React boilerplate</p>
+      <h2>Scouter</h2>
+      <Scouter />
     </div>);
   }
 }
