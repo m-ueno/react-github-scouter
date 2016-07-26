@@ -4,7 +4,7 @@ import Scouter from './Scouter.jsx';
 export default class App extends React.Component {
   render() {
     return (<div>
-      <h2>Scouter</h2>
+      <h2 className="ui header">Scouter</h2>
       <Scouter />
     </div>);
   }
