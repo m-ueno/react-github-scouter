@@ -17,7 +17,6 @@ export default class Scouter extends React.Component {
     super(props);
     this.state = {
       scouterData: [{}],
-      error: false,
     };
   }
   componentDidMount() {
@@ -29,7 +28,6 @@ export default class Scouter extends React.Component {
       })
       .catch(err => {
         console.log('error', err);
-        this.setState({ error: err });
       })
       ;
   }
@@ -37,11 +35,6 @@ export default class Scouter extends React.Component {
     const cards = this.state.scouterData.map(e => <ScouterCard data={e} key={e.name} />);
     return (<div>
       {cards}
-      {
-        this.state.error
-        ? <p>this.state.error</p>
-        : null
-      }
     </div>);
   }
 }
