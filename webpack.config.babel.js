@@ -1,4 +1,5 @@
 import path from 'path';
+import webpack from 'webpack';
 
 const js = {
   entry: './index.jsx',
@@ -8,6 +9,12 @@ const js = {
     filename: 'bundle.js',
   },
   devtool: 'source-map',
+  devServer: {
+    hot: true,
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+  ],
   module: {
     preLoaders: [
       {
@@ -19,12 +26,12 @@ const js = {
       {
         test: /\.js$/,
         include: path.resolve('src'),
-        loader: 'babel',
+        loaders: ['react-hot', 'babel'],
       },
       {
         test: /\.jsx$/,
         // include: path.resolve('src'),
-        loader: 'babel',
+        loaders: ['react-hot', 'babel'],
       },
     ],
   },
