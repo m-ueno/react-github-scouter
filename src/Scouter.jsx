@@ -32,7 +32,7 @@ export default class Scouter extends React.Component {
     };
   }
   componentDidMount() {
-    const uri = '/scouterData.json';
+    const uri = 'scouterData.json';
     fetch(uri)
       .then(res => res.json())
       .then(json => {
