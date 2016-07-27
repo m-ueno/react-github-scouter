@@ -39,7 +39,7 @@ export default class Scouter extends React.Component {
         this.setState({ scouterData: json });
       })
       .catch(err => {
-        console.log('error', err);
+        throw new Error(err);
       })
       ;
   }
