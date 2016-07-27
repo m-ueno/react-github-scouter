@@ -3,7 +3,7 @@ require 'json'
 
 Bundler.require
 
-USERS = %w(ohtake yoshimov m-ueno nhayato)
+USERS = %w(sekia556 ohtake yoshimov m-ueno nhayato)
 
 def fetch_user(name)
   warn sc = GithubScouter::Scouter.new(name)
