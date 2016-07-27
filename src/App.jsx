@@ -10,12 +10,11 @@ export default class App extends React.Component {
           GitHub
         </a>
         <a href="#" className="item">
-          <strike>Twitter</strike>
+          <s>Twitter</s>
         </a>
       </div>
       <h2 className="ui header">GitHub Scouter</h2>
       <Scouter />
-      <div className="ui horizontal divider"><i className="like icon" /></div>
       <Note />
     </div>);
   }
